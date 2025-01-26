@@ -35,6 +35,13 @@ const todoSlice = createSlice({
             }
             state.todos.push(newTodo)
             localStorage.setItem('todos', JSON.stringify(state.todos))
+        },
+        toggleTodo: (state, action: PayloadAction<string>) => {
+            const todo = state.todos.find((todo) => todo.id === action.payload)
+            if (todo) {
+                todo.complete = !todo.complete
+                localStorage.setItem('todos', JSON.stringify(state.todos))
+            }
         }
     }
 })
