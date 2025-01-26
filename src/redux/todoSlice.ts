@@ -6,3 +6,8 @@ interface Todo {
     complete: boolean,
     category: string
 }
+
+interface TodoState {
+    todos: Todo[]
+}
+
