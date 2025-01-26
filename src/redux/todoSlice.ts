@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from 'uuid';
 
 interface Todo {
     id: string,
@@ -21,3 +22,19 @@ const initialState:TodoState = {
     todos: loadTodoFromLocalStorage()
 }
 
+const todoSlice = createSlice({
+    name: 'todos',
+    initialState,
+    reducers: {
+        addTodo: (state, action: PayloadAction<{text: string, category: string }>) => {
+            const newTodo = {
+                id: uuidv4(),
+                text: action.payload.text,
+                complete: false,
+                category: action.payload.category
+            }
+            state.todos.push(newTodo)
+            localStorage.setItem('todos', JSON.stringify(state.todos))
+        }
+    }
+})
