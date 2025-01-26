@@ -10,7 +10,7 @@ interface Todo {
 }
 
 // TodoState interface
-interface TodoState {
+export interface TodoState {
     todos: Todo[] 
     filter: {
         category: 'all' | 'family' | 'work' | 'private',

@@ -1,10 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react';
+import TodoForm from './components/TodoForm';
+import TodoFilter from './components/TodoFilter';
+import TodoList from './components/TodoList';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { setFilter } from './redux/todoSlice';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <>
