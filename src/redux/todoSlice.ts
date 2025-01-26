@@ -26,7 +26,21 @@ const loadTodoFromLocalStorage = () => {
 
 // initial todoState
 const initialState:TodoState = {
-    todos: loadTodoFromLocalStorage()
+    todos: loadTodoFromLocalStorage(),
+    filter: {
+        category: 'all',
+        completed: 'all',
+    },
+}
+
+// Task filter
+const filteredTodos = (todos: Todo[], filter: TodoState['filter']) => {
+    return todos.filter((todo) => {
+        const categoryMatch = filter.category === 'all' || todo.category === filter.category
+        const completionMatch = filter.completed === 'all' || (filter.completed === 'completed' && todo.complete) ||(filter.completed === 'incompleted' && !todo.complete)
+    
+    return categoryMatch && completionMatch
+    })
 }
 
 // todoSlice
