@@ -49,7 +49,7 @@ const todoSlice = createSlice({
     initialState,
     reducers: {
         // add new Task
-        addTodo: (state, action: PayloadAction<{text: string, category: string }>) => {
+        addTodo: (state, action: PayloadAction<{text: string, category: 'family' | 'work' | 'private' }>) => {
             const newTodo = {
                 id: uuidv4(),
                 text: action.payload.text,
@@ -73,16 +73,21 @@ const todoSlice = createSlice({
             localStorage.setItem('todos', JSON.stringify(state.todos))
         },
         // edit task
-        editTodo: (state, action: PayloadAction<{id: string, NewText: string, NewCategory: string}>) => {
+        editTodo: (state, action: PayloadAction<{id: string, NewText: string, NewCategory: 'family' | 'work' | 'private'}>) => {
             const todo = state.todos.find((todo) => todo.id === action.payload.id)
             if (todo) {
                 todo.text = action.payload.NewText
                 todo.category = action.payload.NewCategory
                 localStorage.setItem('todos', JSON.stringify(state.todos))
             }
+        },
+        // update filter
+        setFilter: (state, action: PayloadAction<{ category: 'all' | 'family' | 'work' | 'private'; completed: 'all' | 'completed' | 'incompleted' }>) => {
+            state.filter = action.payload
         }
     }
 })
 
 export const {addTodo, toggleTodo, removeTodo, editTodo} = todoSlice.actions
 export default todoSlice.reducer
+
