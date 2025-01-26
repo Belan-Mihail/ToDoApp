@@ -6,12 +6,16 @@ interface Todo {
     id: string,
     text: string,
     complete: boolean,
-    category: string
+    category: 'family' | 'work' | 'private'
 }
 
 // TodoState interface
 interface TodoState {
     todos: Todo[] 
+    filter: {
+        category: 'all' | 'family' | 'work' | 'private',
+        completed: 'all' | 'completed' | 'incompleted'
+    }
 }
 
 // Load tasks from local storage
