@@ -3,19 +3,22 @@ import TodoForm from './components/TodoForm';
 import TodoFilter from './components/TodoFilter';
 import TodoList from './components/TodoList';
 import { useDispatch, useSelector } from 'react-redux';
-
-import { setFilter } from './redux/todoSlice';
+import {RootState} from './redux/store'
+import  setFilter  from './redux/todoSlice';
 import './App.css'
 
-function App() {
+const App: React.FC = () => {
+  const dispatch = useDispatch()
+  const todos = useSelector((state:RootState) => state.todos.todos)
+  const filter = useSelector((state:RootState) => state.todos.filter)
   
 
   return (
-    <>
-      <div>
-        <p className=' text-2xl text-red-400'>Hello world</p>
+
+      <div >
+        
       </div>
-    </>
+
   )
 }
 
