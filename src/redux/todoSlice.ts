@@ -8,12 +8,16 @@ interface Todo {
 }
 
 interface TodoState {
-    todos: Todo[]
+    todos: Todo[] 
 }
 
 // Load tasks from local storage
 const loadTodoFromLocalStorage = () => {
     const savedTodos = localStorage.getItem('todos')
     return savedTodos ? JSON.parse(savedTodos) : []
+}
+
+const initialState:TodoState = {
+    todos: loadTodoFromLocalStorage()
 }
 
