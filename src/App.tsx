@@ -15,8 +15,17 @@ const App: React.FC = () => {
 
   return (
 
-      <div >
-        
+      <div className='mx-auto my-4' >
+        {/* form to add new task */}
+        <TodoForm />
+
+        {/* filters */}
+        <div className='mt-4'>
+          <TodoFilter />
+        </div>
+
+        {/* Task List */}
+        <TodoList todos={todos} filter={filter} />
       </div>
 
   )
