@@ -91,3 +91,6 @@ const todoSlice = createSlice({
 export const {addTodo, toggleTodo, removeTodo, editTodo} = todoSlice.actions
 export default todoSlice.reducer
 
+export const selectFilteredTodos = (state: { todos: TodoState }) => {
+    return filteredTodos(state.todos.todos, state.todos.filter);
+  };
