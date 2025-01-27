@@ -17,6 +17,10 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
         dispatch(toggleTodo(task.id))
     }
 
+    const handleDelete = () => {
+        dispatch(removeTodo(task.id))
+    }
+
   return (
     <div>TodoItem</div>
   )
