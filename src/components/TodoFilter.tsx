@@ -9,6 +9,10 @@ const TodoFilter:React.FC = () => {
   // get current filters
   const currentFilters = useSelector((state:RootState) => state.todos.filter)
 
+  const handleCategoryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(setFilter({category: e.target.value as "family" | "work" | "private" | "all", completed: currentFilters.completed}))
+  }
+
   return (
     <div>TodoFilter</div>
   )
