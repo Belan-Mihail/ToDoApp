@@ -28,7 +28,7 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
     const handleSaveEdit = (e:React.FormEvent) => {
         e.preventDefault()
         if (newText !== task.text || newCategory !== task.category) {
-            dispatch(editTodo(task.id, newText, newCategory))
+            dispatch(editTodo({id: task.id, NewText: newText, NewCategory: newCategory}))
         }
         setEditFormIsOpen(false)
     }
