@@ -13,6 +13,10 @@ const TodoFilter:React.FC = () => {
     dispatch(setFilter({category: e.target.value as "family" | "work" | "private" | "all", completed: currentFilters.completed}))
   }
 
+  const handleCompletionChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    dispatch(setFilter({category: currentFilters.category, completed: e.target.value as "all" | "completed" | "incompleted"}))
+  }
+
   return (
     <div>TodoFilter</div>
   )
