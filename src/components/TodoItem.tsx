@@ -33,6 +33,12 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
         setEditFormIsOpen(false)
     }
 
+    const handleCancel = () => {
+        setNewText(task.text);
+        setNewCategory(task.category);
+        setEditFormIsOpen(false);
+    }
+
   return (
     <div>TodoItem</div>
   )
