@@ -23,7 +23,7 @@ const TodoForm:React.FC = () => {
         <option value="work">work</option>
         <option value="private">private</option>
       </select>
-      <button type='button' className='p-2'>Add Task</button>
+      <button type='submit' className='p-2'>Add Task</button>
     </form>
   )
 }

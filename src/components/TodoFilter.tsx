@@ -1,4 +1,7 @@
 import React from 'react'
+import { UseDispatch, useSelector } from 'react-redux'
+import { setFilter } from '../redux/todoSlice'
+import { RootState } from '../redux/store'
 
 const TodoFilter = () => {
   return (
