@@ -21,6 +21,10 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
         dispatch(removeTodo(task.id))
     }
 
+    const handleEditButtonClick = () => {
+        setEditFormIsOpen(true)
+    }
+
   return (
     <div>TodoItem</div>
   )
