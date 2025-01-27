@@ -21,11 +21,16 @@ const TodoFilter:React.FC = () => {
 
   return (
     <div className='flex gap-2'>
-      <select value={currentFilters.category} onChange={handleCategoryChange} className='p-2'>
+      <select value={currentFilters.category} onChange={handleCategoryChange} className='p-2 m-2'>
         <option value="all">all</option>
         <option value="family">family</option>
         <option value="work">work</option>
         <option value="private">private</option>
+      </select>
+      <select value={currentFilters.completed} onChange={handleCompletionChange} className='p-2 m-2'>
+        <option value="all">all</option>
+        <option value="completed">completed</option>
+        <option value="incompleted">incompleted</option>
       </select>
     </div>
   )
