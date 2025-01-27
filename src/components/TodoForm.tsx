@@ -16,7 +16,15 @@ const TodoForm:React.FC = () => {
   }
 
   return (
-    <div>TodoForm</div>
+    <form onSubmit={handleSubmit} className='p-2 m-2 flex gap-2'>
+      <input type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder='Add new task...' className='p-2'/>
+      <select value={category} onChange={(e) => setCategory(e.target.value as 'family' | 'work' | 'private')} className='p-2'>
+        <option value="family">family</option>
+        <option value="work">work</option>
+        <option value="private"></option>
+      </select>
+      <button type='button' className='p-2'>Add Task</button>
+    </form>
   )
 }
 
