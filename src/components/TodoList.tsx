@@ -10,7 +10,11 @@ interface TodoListProps {
 const TodoList:React.FC<TodoListProps> = ({todos, filter}) => {
   const filteredTask = filteredTodos(todos, filter)
   return (
-    <div>TodoList</div>
+    <div className='m-4'>
+      {filteredTask.map((task) => (
+        
+      ))}
+    </div>
   )
 }
 
