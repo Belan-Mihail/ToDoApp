@@ -1,7 +1,11 @@
 import React from 'react'
 import { UseDispatch, useSelector } from 'react-redux'
 import { RootState } from '../redux/store'
-import { toggleTodo, removeTodo, editTodo } from '../redux/todoSlice'
+import { toggleTodo, removeTodo, editTodo, Todo } from '../redux/todoSlice'
+
+interface TodoItemProps {
+    todo: Todo
+}
 
 const TodoItem = () => {
   return (
