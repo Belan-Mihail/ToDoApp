@@ -1,5 +1,6 @@
 import React from 'react'
 import { filteredTodos, Todo } from '../redux/todoSlice'
+import TodoItem from './TodoItem';
 
 
 interface TodoListProps {
@@ -12,7 +13,7 @@ const TodoList:React.FC<TodoListProps> = ({todos, filter}) => {
   return (
     <div className='m-4'>
       {filteredTask.map((task) => (
-        
+        <TodoItem key={task.id} task={task} />
       ))}
     </div>
   )
