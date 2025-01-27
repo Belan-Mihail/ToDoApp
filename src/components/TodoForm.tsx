@@ -21,7 +21,7 @@ const TodoForm:React.FC = () => {
       <select value={category} onChange={(e) => setCategory(e.target.value as 'family' | 'work' | 'private')} className='p-2'>
         <option value="family">family</option>
         <option value="work">work</option>
-        <option value="private"></option>
+        <option value="private">private</option>
       </select>
       <button type='button' className='p-2'>Add Task</button>
     </form>
