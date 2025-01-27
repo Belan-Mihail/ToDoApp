@@ -4,10 +4,10 @@ import { RootState } from '../redux/store'
 import { toggleTodo, removeTodo, editTodo, Todo } from '../redux/todoSlice'
 
 interface TodoItemProps {
-    todo: Todo
+    task: Todo
 }
 
-const TodoItem = () => {
+const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
   return (
     <div>TodoItem</div>
   )
