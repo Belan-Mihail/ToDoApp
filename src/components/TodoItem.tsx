@@ -13,6 +13,10 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
     const [editFormIsOpen, setEditFormIsOpen] = useState<boolean>(false)
     const dispatch = useDispatch()
 
+    const handleToogle = () => {
+        dispatch(toggleTodo(task.id))
+    }
+
   return (
     <div>TodoItem</div>
   )
