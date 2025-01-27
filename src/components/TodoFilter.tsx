@@ -17,8 +17,17 @@ const TodoFilter:React.FC = () => {
     dispatch(setFilter({category: currentFilters.category, completed: e.target.value as "all" | "completed" | "incompleted"}))
   }
 
+
+
   return (
-    <div>TodoFilter</div>
+    <div className='flex gap-2'>
+      <select value={currentFilters.category} onChange={handleCategoryChange} className='p-2'>
+        <option value="all">all</option>
+        <option value="family">family</option>
+        <option value="work">work</option>
+        <option value="private">private</option>
+      </select>
+    </div>
   )
 }
 
