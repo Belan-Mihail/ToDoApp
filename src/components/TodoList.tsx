@@ -1,7 +1,5 @@
 import React from 'react'
-import { UseSelector } from 'react-redux'
-import { RootState } from '../redux/store'
-import { selectFilteredTodos } from '../redux/todoSlice'
+import { filteredTodos, Todo } from '../redux/todoSlice'
 
 
 interface TodoListProps {
@@ -9,8 +7,8 @@ interface TodoListProps {
   filter: {category: "family" | "work" | "private" | "all"; completed: "all" | "completed" | "incompleted"}
 }
 
-const TodoList = () => {
-
+const TodoList:React.FC<TodoListProps> = ({todos, filter}) => {
+  const filteredTask = filteredTodos(todos, filter)
   return (
     <div>TodoList</div>
   )

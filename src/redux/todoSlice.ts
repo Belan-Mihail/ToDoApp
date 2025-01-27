@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { v4 as uuidv4 } from 'uuid';
 
 // Todo interface
-interface Todo {
+export interface Todo {
     id: string,
     text: string,
     complete: boolean,
@@ -34,7 +34,7 @@ const initialState:TodoState = {
 }
 
 // Task filter
-const filteredTodos = (todos: Todo[], filter: TodoState['filter']) => {
+export const filteredTodos = (todos: Todo[], filter: TodoState['filter']) => {
     return todos.filter((todo) => {
         const categoryMatch = filter.category === 'all' || todo.category === filter.category
         const completionMatch = filter.completed === 'all' || (filter.completed === 'completed' && todo.complete) ||(filter.completed === 'incompleted' && !todo.complete)
