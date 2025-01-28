@@ -32,7 +32,11 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
     }
 
     const handleDelete = () => {
-        dispatch(removeTodo(task.id))
+        const deleteAction = () => {
+            dispatch(removeTodo(task.id))
+        }
+        
+        showModal('Are you sure you want to delete this task?', deleteAction)
     }
 
     const handleSaveEdit = (e:React.FormEvent) => {
