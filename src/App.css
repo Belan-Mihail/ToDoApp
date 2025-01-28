@@ -1,7 +1,11 @@
 
 select {
-    appearance: none; /* hide custom element */
+    appearance: none; /* hide initial element */
     -webkit-appearance: none; /* For Safari */
     -moz-appearance: none; /* For Firefox */
-    
+    text-align: center
   }
+
+  
+
+ 
