@@ -11,7 +11,7 @@ const TodoForm:React.FC = () => {
     e.preventDefault()
 
     try {
-      if (!task.trim()) {
+      if (task.trim()) {
         dispatch(addTodo({text: task, category}))
         setTask('')
       }
