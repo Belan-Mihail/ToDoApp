@@ -52,8 +52,8 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
                         <option value="work">work</option>
                         <option value="private">private</option>
                     </select>
-                    <button type='submit' className='p-2'>Save changes</button>
-                    <button type='button' onClick={handleCancel} className='p-2'>Cancel</button>
+                    <button type='submit' className={`p-2 ${newText === task.text && newCategory === task.category ? "opacity-45 cursor-not-allowed" : ""}`}>Save changes</button>
+                    <button type='button' onClick={handleCancel} className={`p-2 ${newText !== task.text || newCategory !== task.category ? "opacity-45 cursor-not-allowed" : ""}`}>Cancel</button>
                 </form>
             </div>
         )}
