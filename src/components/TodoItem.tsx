@@ -20,6 +20,12 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
         dispatch(toggleTodo(task.id))
     }
 
+    const showModal = (message:string, onConfirm: () => void) => {
+        setModalMessage(message)
+        setDeleteCallback(() => onConfirm)
+        setIsConfirmVisible(true)
+    }
+
     const handleDelete = () => {
         dispatch(removeTodo(task.id))
     }
