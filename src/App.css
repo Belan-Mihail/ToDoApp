@@ -1,1 +1,7 @@
 
+select {
+    appearance: none; /* hide custom element */
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+    
+  }
