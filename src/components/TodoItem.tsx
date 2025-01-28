@@ -45,8 +45,8 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
            <div>
                 <p>{task.text} - {task.category}</p>
                 <input type="checkbox" checked={task.complete} onChange={handleToogle} className='mr-2'/>
-                <button>Edit task</button>
-                <button>Delete task</button>
+                <button type='button' onClick={() => setEditFormIsOpen(true)} className='p-2'>Edit task</button>
+                <button type='button' onClick={handleDelete} className='p-2'>Delete task</button>
            </div> 
         ) : (
             <div>
