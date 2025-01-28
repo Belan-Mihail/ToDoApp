@@ -9,10 +9,17 @@ const TodoForm:React.FC = () => {
 
   const handleSubmit = (e:React.FormEvent) => {
     e.preventDefault()
-    if (!task.trim()) {
-      dispatch(addTodo({text: task, category}))
-      setTask('')
+
+    try {
+      if (!task.trim()) {
+        dispatch(addTodo({text: task, category}))
+        setTask('')
+      }
+    } catch (error) {
+      console.log(error)
     }
+
+    
   }
 
   return (
