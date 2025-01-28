@@ -57,6 +57,8 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
                         <option value="work">work</option>
                         <option value="private">private</option>
                     </select>
+                    <button type='submit' className='p-2'>Save changes</button>
+                    <button type='button' onClick={handleCancel} className='p-2'>Cancel</button>
                 </form>
             </div>
         )}
