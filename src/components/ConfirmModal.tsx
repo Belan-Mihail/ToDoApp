@@ -6,9 +6,17 @@ interface ConfirmModalProps {
     header: string
 }
 
-const ConfirmModal = () => {
+const ConfirmModal:React.FC<ConfirmModalProps> = ({header, onConfirm, onCancel}) => {
   return (
-    <div>ConfirmModal</div>
+    <div>
+        <div className='flex gap-2'>
+            <h3>{header}</h3>
+            <div className='flex gap-2'>
+                <button onClick={onConfirm}>Confirm</button>
+                <button onClick={onCancel}>Cancel</button>
+            </div>
+        </div>
+    </div>
   )
 }
 
