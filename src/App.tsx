@@ -15,7 +15,7 @@ const App: React.FC = () => {
 
   return (
 
-      <div className='bg-[#242020cc] rounded-xl text-[#f8f4e5] w-max mx-auto my-4 main' >
+      <div className='bg-[#242020cc] rounded-xl text-[#f8f4e5] w-max mx-auto my-4 main flex flex-col' >
         {/* form to add new task */}
         <TodoForm />
 
