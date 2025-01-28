@@ -26,6 +26,11 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
         setIsConfirmVisible(true)
     }
 
+    const hideModal = () => {
+        setIsConfirmVisible(false)
+        setModalMessage('')
+    }
+
     const handleDelete = () => {
         dispatch(removeTodo(task.id))
     }
