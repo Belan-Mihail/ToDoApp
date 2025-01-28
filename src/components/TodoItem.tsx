@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch, UseDispatch, useSelector } from 'react-redux'
-import { RootState } from '../redux/store'
+import { useDispatch} from 'react-redux'
 import { toggleTodo, removeTodo, editTodo, Todo } from '../redux/todoSlice'
 
 interface TodoItemProps {
@@ -19,10 +18,6 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
 
     const handleDelete = () => {
         dispatch(removeTodo(task.id))
-    }
-
-    const handleEditButtonClick = () => {
-        setEditFormIsOpen(true)
     }
 
     const handleSaveEdit = (e:React.FormEvent) => {
