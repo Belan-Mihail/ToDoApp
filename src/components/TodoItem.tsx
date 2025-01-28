@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch} from 'react-redux'
 import { toggleTodo, removeTodo, editTodo, Todo } from '../redux/todoSlice'
+import ConfirmModal from './ConfirmModal'
 
 interface TodoItemProps {
     task: Todo
@@ -55,6 +56,16 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
 
   return (
     <div className='p-2 m-2 flex gap-2'>
+        {isConfirmVisible && (
+            <ConfirmModal
+            header={modalMessage}
+            onConfirm={() => {
+              deleteCallback()
+              hideModal()
+            }}
+            onCancel={hideModal}
+          />
+        )}
         {!editFormIsOpen ? (
            <div>
                 <p>{task.text} - {task.category}</p>
