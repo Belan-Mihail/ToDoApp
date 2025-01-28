@@ -10,6 +10,10 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
     const [newText, setNewText] = useState<string>(task.text)
     const [newCategory, setNewCategory] = useState<"family" | "work" | "private">(task.category)
     const [editFormIsOpen, setEditFormIsOpen] = useState<boolean>(false)
+    const [modalMessage, setModalMessage] = useState('')
+    const [deleteCallback, setDeleteCallback] = useState<() => void>(() => () => {})
+    const [isConfirmVisible, setIsConfirmVisible] = useState(false)
+
     const dispatch = useDispatch()
 
     const handleToogle = () => {
