@@ -83,7 +83,11 @@ const TodoForm: React.FC = () => {
 
           <button
             type="submit"
-            className="w-[8rem] border-primary-light border-2 rounded-2xl bg-confirm-button"
+            className={`w-[8rem] border-primary-light border-2 rounded-2xl bg-confirm-button ${
+              task.length < 1
+                ? "opacity-45 cursor-not-allowed"
+                : ""
+            }`}
           >
             Add Task
           </button>
