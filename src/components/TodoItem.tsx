@@ -67,15 +67,15 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
           />
         )}
         {!editFormIsOpen ? (
-           <div>
-                <p className='p-2 border-[#f8f4e5] border-2 bg-[#c5e62fcc] rounded-xl text-[#020920cc] w-full max-w-full'>{task.text}</p>
+           <div className='w-full'>
+                <p className='p-2 border-[#f8f4e5] border-2 bg-[#c5e62fcc] rounded-xl text-[#020920cc]'>{task.text}</p>
                 <p>{task.category}</p>
                 <input type="checkbox" checked={task.complete} onChange={handleToogle} className='mr-2'/>
                 <button type='button' onClick={() => setEditFormIsOpen(true)} className='p-2'>Edit task</button>
                 <button type='button' onClick={handleDelete} className='p-2'>Delete task</button>
            </div> 
         ) : (
-            <div>
+            <div className='w-full'>
                 <form onSubmit={handleSaveEdit} className='flex'>
                     <input type="text" value={newText} onChange={(e) => setNewText(e.target.value)} className='p-2' />
                     <select value={newCategory} onChange={(e) => setNewCategory(e.target.value as "family" | "work" | "private")} className='p-2'>
