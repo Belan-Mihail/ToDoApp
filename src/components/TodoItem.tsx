@@ -100,10 +100,10 @@ const TodoItem:React.FC<TodoItemProps> = ({ task, index }) => {
                     <input type="text" value={newText} onChange={handleTaskChange} className='p-2 border-primary-light border-2 bg-edit-button rounded-xl text-dark-text' />
                        <div className='flex justify-around items-center mt-2 mx-4 gap-4'>
                             <div className='flex  justify-around gap-4 items-center'>
-                                <select value={newCategory} onChange={(e) => setNewCategory(e.target.value as "family" | "work" | "private")} className='p-2'>
-                                    <option value="family">family</option>
-                                    <option value="work">work</option>
-                                    <option value="private">private</option>
+                                <select value={newCategory} onChange={(e) => setNewCategory(e.target.value as "family" | "work" | "private")} className='w-[8rem]  border-primary-light border-2 rounded-xl'>
+                                    <option className='bg-secondary-dark text-left' value="family">family</option>
+                                    <option className='bg-secondary-dark text-left' value="work">work</option>
+                                    <option className='bg-secondary-dark text-left' value="private">private</option>
                                 </select>  
                             </div>
                             <div className="text-sm italic text-primary-light mt-1 text-right">
