@@ -68,6 +68,7 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
         )}
         {!editFormIsOpen ? (
            <div className='w-full flex flex-col'>
+                
                 <p className='p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text'>{task.text}</p>
                 <div className='flex justify-between'>
                     <p className='mt-1 text-sm italic'>Category: <span className='text-lemon'>{task.category}</span></p>
@@ -77,9 +78,10 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
                     </div>
                     
                 </div>
-                
-                <button type='button' onClick={() => setEditFormIsOpen(true)} className='p-2'>Edit task</button>
-                <button type='button' onClick={handleDelete} className='p-2'>Delete task</button>
+                <div className='flex justify-around mt-2'>
+                    <button type='button' onClick={() => setEditFormIsOpen(true)} className='w-[8rem] border-primary-light border-2 rounded-2xl bg-edit-button'>Edit task</button>
+                    <button type='button' onClick={handleDelete} className='w-[8rem] border-primary-light border-2 rounded-2xl bg-delete-button'>Delete task</button>
+                </div>
            </div> 
         ) : (
             <div className='w-full'>
