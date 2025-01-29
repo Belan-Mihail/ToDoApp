@@ -23,7 +23,11 @@ const TodoForm:React.FC = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='p-4 m-4 flex gap-2 border-[#f8f4e5] border-2 rounded bg-[#292626cc]'>
+    <>
+    <div className='flex items-center justify-center text-center mt-2'>
+        <h3>Add new task</h3>
+    </div>
+    <form onSubmit={handleSubmit} className='p-4 mx-4 mt-2 flex gap-2 border-[#f8f4e5] border-2 rounded bg-[#292626cc]'>
       <input type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder='Add new task...' className='p-2 border-[#f8f4e5] border-2 bg-[#c5e62fcc] rounded-xl text-[#020920cc]'/>
       <select value={category} onChange={(e) => setCategory(e.target.value as 'family' | 'work' | 'private')} className='px-8 border-[#f8f4e5] border-2 rounded-xl'>
         
@@ -33,6 +37,8 @@ const TodoForm:React.FC = () => {
       </select>
       <button type='submit' className='p-2 border-[#f8f4e5] border-2 rounded-2xl bg-[#3dd472cc]'>Add Task</button>
     </form>
+    </>
+    
   )
 }
 
