@@ -25,6 +25,13 @@ const TodoForm:React.FC = () => {
     
   }
 
+  const handleTaskChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newTask:string = e.target.value
+    if (newTask.length <= maxLength) {
+      setTask(newTask)
+    }
+  }
+
   return (
     <>
     <div className='flex items-center justify-center text-center mt-2'>
