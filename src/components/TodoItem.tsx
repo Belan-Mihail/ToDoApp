@@ -55,7 +55,7 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
     }
 
   return (
-    <div className='p-2 m-2 flex gap-2 mb-2'>
+    <div className='p-2 m-2 flex gap-2 mb-2 w-full max-w-full'>
         {isConfirmVisible && (
             <ConfirmModal
             header={modalMessage}
@@ -68,7 +68,8 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
         )}
         {!editFormIsOpen ? (
            <div>
-                <p>{task.text} - {task.category}</p>
+                <p className='p-2 border-[#f8f4e5] border-2 bg-[#c5e62fcc] rounded-xl text-[#020920cc] w-full max-w-full'>{task.text}</p>
+                <p>{task.category}</p>
                 <input type="checkbox" checked={task.complete} onChange={handleToogle} className='mr-2'/>
                 <button type='button' onClick={() => setEditFormIsOpen(true)} className='p-2'>Edit task</button>
                 <button type='button' onClick={handleDelete} className='p-2'>Delete task</button>
