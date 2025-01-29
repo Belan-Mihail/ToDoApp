@@ -113,9 +113,8 @@ const TodoItem:React.FC<TodoItemProps> = ({ task, index }) => {
                         
 
                     <div className='flex justify-around mt-2 mx-4 gap-4'>
-                        
-                        <button type='submit' className={`p-2 ${newText === task.text && newCategory === task.category ? "opacity-45 cursor-not-allowed" : ""}`}>Save changes</button>
-                        <button type='button' onClick={handleCancel} className={`p-2`}>Cancel</button>
+                        <button type='submit' className={`w-[8rem] border-primary-light border-2 rounded-2xl bg-confirm-button ${newText === task.text && newCategory === task.category ? "opacity-45 cursor-not-allowed" : ""}`}>Save changes</button>
+                        <button type='button' onClick={handleCancel} className={`w-[8rem] border-primary-light border-2 rounded-2xl bg-delete-button`}>Cancel</button>
                     </div>
                         
                         
