@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+@theme {
+    --color-primary-dark: #242020cc;
+    --color-secondary-dark: #292626cc;
+    --color-confirm-button: #3dd472cc;
+    --color-primary-light: #f8f4e5;
+    --color-lemon: #c5e62fcc;
+    --color-dark-text: #020920cc;
+
+}

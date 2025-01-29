@@ -37,9 +37,9 @@ const TodoForm:React.FC = () => {
     <div className='flex items-center justify-center text-center mt-2'>
         <h3>Add new task</h3>
     </div>
-    <form onSubmit={handleSubmit} className='p-4 mx-4 mt-2 flex flex-col gap-2 border-[#f8f4e5] border-2 rounded bg-[#292626cc]'>
-      <input type="text" value={task} onChange={handleTaskChange} placeholder='Add new task...' className='p-2 border-[#f8f4e5] border-2 bg-[#c5e62fcc] rounded-xl text-[#020920cc]'/>
-      <div className="text-sm italic text-[#f8f4e5] mt-1 text-right">
+    <form onSubmit={handleSubmit} className='p-4 mx-4 mt-2 flex flex-col gap-2 border-[#f8f4e5] border-2 rounded bg-secondary-dark'>
+      <input type="text" value={task} onChange={handleTaskChange} placeholder='Add new task...' className='p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text'/>
+      <div className="text-sm italic text-primary-light mt-1 text-right">
           {task.length} / {maxLength} characters
         </div>
       <div className='flex justify-around mt-2 mx-4 gap-4'>
@@ -53,7 +53,7 @@ const TodoForm:React.FC = () => {
       </select>
         </div>
         
-      <button type='submit' className='w-[8rem] border-[#f8f4e5] border-2 rounded-2xl bg-[#3dd472cc]'>Add Task</button>
+      <button type='submit' className='w-[8rem] border-[#f8f4e5] border-2 rounded-2xl bg-confirm-button'>Add Task</button>
       </div>
       
     </form>
