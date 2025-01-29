@@ -66,7 +66,7 @@ const TodoItem:React.FC<TodoItemProps> = ({ task, index }) => {
     }
 
   return (
-    <div className='p-2 m-2 flex gap-2 mb-2 w-full max-w-full'>
+    <div className='p-2 m-2 flex flex-col gap-2 mb-2 w-full max-w-full'>
         {isConfirmVisible && (
             <ConfirmModal
             header={modalMessage}

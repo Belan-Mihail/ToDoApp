@@ -9,11 +9,11 @@ interface ConfirmModalProps {
 const ConfirmModal:React.FC<ConfirmModalProps> = ({header, onConfirm, onCancel}) => {
   return (
     <div>
-        <div className='flex gap-2'>
-            <h3>{header}</h3>
+        <div className='flex flex-col gap-2 items-center'>
+            <h3 className='text-delete-button'>{header}</h3>
             <div className='flex gap-2'>
-                <button onClick={onConfirm}>Confirm</button>
-                <button onClick={onCancel}>Cancel</button>
+                <button className='w-[8rem] border-primary-light border-2 rounded-2xl bg-delete-button' onClick={onConfirm}>Confirm</button>
+                <button className='w-[8rem] border-primary-light border-2 rounded-2xl bg-edit-button' onClick={onCancel}>Cancel</button>
             </div>
         </div>
     </div>
