@@ -107,14 +107,14 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, index }) => {
             <button
               type="button"
               onClick={() => setEditFormIsOpen(true)}
-              className="w-[8rem] border-primary-light border-2 rounded-2xl bg-edit-button"
+              className="w-[8rem] border-primary-light border-2 rounded-2xl bg-edit-button hover:bg-edit-button-hover"
             >
               Edit task
             </button>
             <button
               type="button"
               onClick={handleDelete}
-              className="w-[8rem] border-primary-light border-2 rounded-2xl bg-delete-button"
+              className="w-[8rem] border-primary-light border-2 rounded-2xl bg-delete-button hover:bg-delete-button-hover"
             >
               Delete task
             </button>
