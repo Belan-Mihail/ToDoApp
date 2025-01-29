@@ -24,23 +24,23 @@ const TodoFilter:React.FC = () => {
     <div className='flex items-center justify-center text-center'>
         <h3>Filters</h3>
     </div>
-    <div className='p-4 mx-4 mt-2 flex flex-col gap-2 border-[#f8f4e5] border-2 rounded bg-[#292626cc] items-center justify-around'>
+    <div className='p-4 mx-4 mt-2 flex flex-col gap-2 bg-primary-dark border-primary-light border-2 rounded bg-se items-center justify-around'>
       <div className='flex justify-around gap-4 px-4'>
           <div className='flex flex-col gap-2 text-center'>
             <h4 className='text-sm italic'>by category</h4>
-            <select value={currentFilters.category} onChange={handleCategoryChange} className='px-8 border-[#f8f4e5] border-2 rounded-xl w-[10rem]'>
-        <option value="all" className='bg-[#292626cc] text-left'>all</option>
-        <option value="family" className='bg-[#292626cc] text-left'>family</option>
-        <option value="work" className='bg-[#292626cc] text-left'>work</option>
-        <option value="private" className='bg-[#292626cc] text-left'>private</option>
+            <select value={currentFilters.category} onChange={handleCategoryChange} className='px-8 border-primary-light border-2 rounded-xl w-[10rem]'>
+        <option value="all" className='bg-psecondary-dark text-left'>all</option>
+        <option value="family" className='bg-secondary-dark text-left'>family</option>
+        <option value="work" className='bg-secondary-dark text-left'>work</option>
+        <option value="private" className='bg-secondary-dark text-left'>private</option>
       </select>
           </div>
           <div className='flex flex-col gap-2 text-center items-center'>
             <h4 className='text-sm italic'>by completion</h4>
-             <select value={currentFilters.completed} onChange={handleCompletionChange} className='px-8 border-[#f8f4e5] border-2 rounded-xl w-[10rem] text-center'>
-        <option value="all" className='bg-[#292626cc] text-left'>all</option>
-        <option value="completed" className='bg-[#292626cc] text-left'>completed</option>
-        <option value="incompleted" className='bg-[#292626cc] text-left'>incompleted</option>
+             <select value={currentFilters.completed} onChange={handleCompletionChange} className='px-8 border-primary-light border-2 rounded-xl w-[10rem] text-center'>
+        <option value="all" className='bg-secondary-dark text-left'>all</option>
+        <option value="completed" className='bg-secondary-dark text-left'>completed</option>
+        <option value="incompleted" className='bg-secondary-dark text-left'>incompleted</option>
       </select>
           </div>
      

@@ -68,9 +68,9 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
         )}
         {!editFormIsOpen ? (
            <div className='w-full flex flex-col'>
-                <p className='p-2 border-[#f8f4e5] border-2 bg-[#c5e62fcc] rounded-xl text-[#020920cc]'>{task.text}</p>
+                <p className='p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text'>{task.text}</p>
                 <div className='flex justify-between'>
-                    <p className='mt-1 text-sm italic'>Category: <span className='text-[#c5e62fcc]'>{task.category}</span></p>
+                    <p className='mt-1 text-sm italic'>Category: <span className='text-lemon'>{task.category}</span></p>
                     <div className='flex gap-2' >
                         <p className='text-sm italic'>completed</p>
                         <input type="checkbox" checked={task.complete} onChange={handleToogle} className='mr-2'/>
