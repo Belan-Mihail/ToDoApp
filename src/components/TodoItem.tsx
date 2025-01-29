@@ -86,7 +86,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, index }) => {
       {!editFormIsOpen ? (
         <div className="w-full flex flex-col">
           <p className="text-sm italic mb-1">Task number: {index + 1}</p>
-          <p className="p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text">
+          <p className="p-2  bg-lemon rounded-xl text-dark-text">
             {task.text}
           </p>
           <div className="flex justify-between">
@@ -129,7 +129,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, index }) => {
             <textarea
               value={newText}
               onChange={handleTaskChange}
-              className="p-2 border-primary-light border-2 bg-edit-button rounded-xl text-dark-text resize-none"
+              className="p-2 border-primary-light border-2 bg-edit-button rounded-xl text-dark-text resize-none focus:outline-none focus:border-0 hover:border-confirm-button transition-all"
               rows={2}
             />
             <div className="flex justify-around items-center mt-2 mx-4 gap-4">
@@ -141,7 +141,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, index }) => {
                       e.target.value as "family" | "work" | "private"
                     )
                   }
-                  className="w-[8rem]  border-primary-light border-2 rounded-xl"
+                  className="w-[8rem]  border-primary-light border-2 rounded-xl focus:outline-none hover:border-lemon transition-all"
                 >
                   <option
                     className="bg-secondary-dark text-left"
