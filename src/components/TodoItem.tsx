@@ -5,9 +5,10 @@ import ConfirmModal from './ConfirmModal'
 
 interface TodoItemProps {
     task: Todo
+    index: number
 }
 
-const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
+const TodoItem:React.FC<TodoItemProps> = ({ task, index }) => {
     const [newText, setNewText] = useState<string>(task.text)
     const [newCategory, setNewCategory] = useState<"family" | "work" | "private">(task.category)
     const [editFormIsOpen, setEditFormIsOpen] = useState<boolean>(false)
@@ -68,7 +69,7 @@ const TodoItem:React.FC<TodoItemProps> = ({ task }) => {
         )}
         {!editFormIsOpen ? (
            <div className='w-full flex flex-col'>
-                
+                <p className='text-sm italic mb-1'>Task number: {index + 1}</p>
                 <p className='p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text'>{task.text}</p>
                 <div className='flex justify-between'>
                     <p className='mt-1 text-sm italic'>Category: <span className='text-lemon'>{task.category}</span></p>

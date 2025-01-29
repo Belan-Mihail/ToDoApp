@@ -16,8 +16,8 @@ const TodoList:React.FC<TodoListProps> = ({todos, filter}) => {
         <h3>Current tasks</h3>
     </div>
     <div className='p-4 mx-4 mt-2 mb-4 flex flex-col gap-2 border-primary-light border-2 rounded bg-secondary-dark items-center justify-around'>
-      {filteredTask.length > 0 ? (filteredTask.map((task) => (
-        <TodoItem key={task.id} task={task} />
+      {filteredTask.length > 0 ? (filteredTask.map((task, index) => (
+        <TodoItem key={task.id} task={task} index={index} />
       ))) : (
         <p>You don't have any tasks yet.</p>
       )}
