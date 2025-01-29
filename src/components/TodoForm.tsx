@@ -7,6 +7,9 @@ const TodoForm:React.FC = () => {
   const [category, setCategory] = useState<'family' | 'work' | 'private'>('family')
   const dispatch = useDispatch()
 
+  // Maximum number of characters
+  const maxLength = 500
+
   const handleSubmit = (e:React.FormEvent) => {
     e.preventDefault()
 
