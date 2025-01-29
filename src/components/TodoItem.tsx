@@ -49,6 +49,16 @@ const TodoItem:React.FC<TodoItemProps> = ({ task, index }) => {
         setEditFormIsOpen(false)
     }
 
+    // Maximum number of characters
+    const maxLength = 500
+
+    const handleTaskChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+        const newTask:string = e.target.value
+        if (newTask.length < maxLength) {
+            setNewText(newTask)
+        }
+    }
+
     const handleCancel = () => {
         setNewText(task.text);
         setNewCategory(task.category);
@@ -87,7 +97,7 @@ const TodoItem:React.FC<TodoItemProps> = ({ task, index }) => {
         ) : (
             <div className='w-full'>
                 <form onSubmit={handleSaveEdit} className='p-4 mx-4 mt-2 flex flex-col gap-2 border-primary-light border-2 rounded bg-secondary-dark'>
-                    <input type="text" value={newText} onChange={(e) => setNewText(e.target.value)} className='p-2 border-primary-light border-2 bg-edit-button rounded-xl text-dark-text' />
+                    <input type="text" value={newText} onChange={handleTaskChange} className='p-2 border-primary-light border-2 bg-edit-button rounded-xl text-dark-text' />
                     <select value={newCategory} onChange={(e) => setNewCategory(e.target.value as "family" | "work" | "private")} className='p-2'>
                         <option value="family">family</option>
                         <option value="work">work</option>
