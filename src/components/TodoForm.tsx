@@ -47,7 +47,6 @@ const TodoForm: React.FC = () => {
           onChange={handleTaskChange}
           placeholder="Add new task..."
           className="p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text resize-none"
-          readOnly={task.length >= maxLength}
           rows={4}
         />
         {task.length >= maxLength ? (
