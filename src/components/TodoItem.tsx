@@ -98,13 +98,27 @@ const TodoItem:React.FC<TodoItemProps> = ({ task, index }) => {
             <div className='w-full'>
                 <form onSubmit={handleSaveEdit} className='p-4 mx-4 mt-2 flex flex-col gap-2 border-primary-light border-2 rounded bg-secondary-dark'>
                     <input type="text" value={newText} onChange={handleTaskChange} className='p-2 border-primary-light border-2 bg-edit-button rounded-xl text-dark-text' />
-                    <select value={newCategory} onChange={(e) => setNewCategory(e.target.value as "family" | "work" | "private")} className='p-2'>
-                        <option value="family">family</option>
-                        <option value="work">work</option>
-                        <option value="private">private</option>
-                    </select>
-                    <button type='submit' className={`p-2 ${newText === task.text && newCategory === task.category ? "opacity-45 cursor-not-allowed" : ""}`}>Save changes</button>
-                    <button type='button' onClick={handleCancel} className={`p-2`}>Cancel</button>
+                       <div className='flex justify-around items-center mt-2 mx-4 gap-4'>
+                            <div className='flex  justify-around gap-4 items-center'>
+                                <select value={newCategory} onChange={(e) => setNewCategory(e.target.value as "family" | "work" | "private")} className='p-2'>
+                                    <option value="family">family</option>
+                                    <option value="work">work</option>
+                                    <option value="private">private</option>
+                                </select>  
+                            </div>
+                            <div className="text-sm italic text-primary-light mt-1 text-right">
+                                {newText.length} / {maxLength} characters
+                            </div>
+                        </div> 
+                        
+
+                    <div className='flex justify-around mt-2 mx-4 gap-4'>
+                        
+                        <button type='submit' className={`p-2 ${newText === task.text && newCategory === task.category ? "opacity-45 cursor-not-allowed" : ""}`}>Save changes</button>
+                        <button type='button' onClick={handleCancel} className={`p-2`}>Cancel</button>
+                    </div>
+                        
+                        
                 </form>
             </div>
         )}
