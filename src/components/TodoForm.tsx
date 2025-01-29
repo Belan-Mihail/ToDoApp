@@ -61,7 +61,6 @@ const TodoForm: React.FC = () => {
         
         <div className="flex justify-around mt-2 mx-4 gap-4">
           <div className="flex  justify-around gap-4 items-center">
-            <h4 className="text-sm italic">Select category:</h4>
             <select
               value={category}
               onChange={(e) =>
