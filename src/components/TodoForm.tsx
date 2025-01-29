@@ -46,7 +46,7 @@ const TodoForm: React.FC = () => {
           value={task}
           onChange={handleTaskChange}
           placeholder="Add new task..."
-          className="p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text resize-none"
+          className="p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text resize-none focus:outline-none focus:border-0 hover:border-confirm-button transition-all"
           rows={4}
         />
         {task.length >= maxLength ? (
@@ -67,7 +67,7 @@ const TodoForm: React.FC = () => {
               onChange={(e) =>
                 setCategory(e.target.value as "family" | "work" | "private")
               }
-              className="w-[8rem]  border-primary-light border-2 rounded-xl"
+              className="w-[8rem]  border-primary-light border-2 rounded-xl focus:outline-none hover:border-lemon transition-all"
             >
               <option className="bg-secondary-dark text-left" value="family">
                 family
@@ -83,7 +83,7 @@ const TodoForm: React.FC = () => {
 
           <button
             type="submit"
-            className={`w-[8rem] border-primary-light border-2 rounded-2xl bg-confirm-button ${
+            className={`w-[8rem] border-primary-light border-2 rounded-2xl bg-confirm-button hover:bg-confirm-button-hover ${
               task.length < 1
                 ? "opacity-45 cursor-not-allowed"
                 : ""
