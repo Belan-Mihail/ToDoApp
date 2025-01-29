@@ -8,7 +8,7 @@ import  setFilter  from './redux/todoSlice';
 import './App.css'
 
 const App: React.FC = () => {
-  const dispatch = useDispatch()
+  
   const todos = useSelector((state:RootState) => state.todos.todos)
   const filter = useSelector((state:RootState) => state.todos.filter)
   

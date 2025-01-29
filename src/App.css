@@ -17,10 +17,18 @@ select {
     .custom-width {
       width: 6rem;
     }
+
+    .custom-padding {
+      padding: .3rem;
+    }
   }
   
   @media (min-width: 400px) {
     .custom-width {
       width: 8rem;
+    }
+
+    .custom-padding {
+      padding: unset
     }
   }

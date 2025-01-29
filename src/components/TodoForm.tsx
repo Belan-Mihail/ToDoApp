@@ -66,7 +66,7 @@ const TodoForm: React.FC = () => {
               onChange={(e) =>
                 setCategory(e.target.value as "family" | "work" | "private")
               }
-              className="w-[8rem]  border-primary-light border-2 rounded-xl focus:outline-none hover:border-lemon transition-all"
+              className="custom-width border-primary-light border-2 rounded-xl focus:outline-none hover:border-lemon transition-all"
             >
               <option className="bg-secondary-dark text-left" value="family">
                 family
@@ -82,7 +82,7 @@ const TodoForm: React.FC = () => {
 
           <button
             type="submit"
-            className={`w-[8rem] border-primary-light border-2 rounded-2xl bg-confirm-button hover:bg-confirm-button-hover ${
+            className={`custom-width border-primary-light border-2 rounded-2xl bg-confirm-button hover:bg-confirm-button-hover ${
               task.length < 1
                 ? "opacity-45 cursor-not-allowed"
                 : ""
