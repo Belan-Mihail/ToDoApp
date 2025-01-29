@@ -174,7 +174,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, index }) => {
             <div className="flex justify-around mt-2 mx-4 gap-4">
               <button
                 type="submit"
-                className={`w-[8rem] border-primary-light border-2 rounded-2xl bg-confirm-button ${
+                className={`w-[8rem] border-primary-light border-2 rounded-2xl bg-confirm-button hover:bg-confirm-button-hover ${
                   (newText === task.text && newCategory === task.category) || (newText.length < 1)
                     ? "opacity-45 cursor-not-allowed"
                     : ""
@@ -185,7 +185,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, index }) => {
               <button
                 type="button"
                 onClick={handleCancel}
-                className={`w-[8rem] border-primary-light border-2 rounded-2xl bg-delete-button`}
+                className={`w-[8rem] border-primary-light border-2 rounded-2xl bg-delete-button hover:bg-delete-button-hover`}
               >
                 Cancel
               </button>
