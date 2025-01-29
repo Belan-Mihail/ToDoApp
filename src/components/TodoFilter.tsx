@@ -20,11 +20,12 @@ const TodoFilter:React.FC = () => {
 
 
   return (
-    <div className='p-4 m-4 flex flex-col gap-2 border-[#f8f4e5] border-2 rounded bg-[#292626cc] items-center justify-around'>
-      <div className='flex items-center justify-center text-center'>
+    <>
+    <div className='flex items-center justify-center text-center'>
         <h3>Filters</h3>
-      </div>
-        <div className='flex justify-around gap-4 px-4'>
+    </div>
+    <div className='p-4 mx-4 mt-2 flex flex-col gap-2 border-[#f8f4e5] border-2 rounded bg-[#292626cc] items-center justify-around'>
+      <div className='flex justify-around gap-4 px-4'>
           <div className='flex flex-col gap-2 text-center'>
             <h4 className='text-sm italic'>by category</h4>
             <select value={currentFilters.category} onChange={handleCategoryChange} className='px-8 border-[#f8f4e5] border-2 rounded-xl w-[10rem]'>
@@ -46,6 +47,8 @@ const TodoFilter:React.FC = () => {
         </div>
       
     </div>
+    </>
+    
   )
 }
 
