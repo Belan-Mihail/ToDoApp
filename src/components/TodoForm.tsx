@@ -32,7 +32,20 @@ const TodoForm: React.FC = () => {
   };
 
   const handleTaskChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    const newTask: string = e.target.value;
+    let newTask: string = e.target.value;
+
+    const words = newTask.split(' ');
+
+    const modifiedWords = words.map((word) => {
+      if (word.length > maxOneWordlLength) {
+        return word.substring(0, maxOneWordlLength) + '...'
+      }
+      return word;
+    })
+
+    newTask = modifiedWords.join(' ');
+     setTask(newTask);
+
     if (newTask.length <= maxLength) {
       setTask(newTask);
     } else {
