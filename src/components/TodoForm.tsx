@@ -33,6 +33,8 @@ const TodoForm: React.FC = () => {
     const newTask: string = e.target.value;
     if (newTask.length <= maxLength) {
       setTask(newTask);
+    } else {
+      toast.warning('you have reached the maximum number of characters')
     }
   };
 
