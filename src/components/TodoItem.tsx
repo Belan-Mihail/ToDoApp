@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggleTodo, removeTodo, editTodo, Todo } from "../redux/todoSlice";
 import ConfirmModal from "./ConfirmModal";
+import { toast } from "react-toastify";
 
 interface TodoItemProps {
   task: Todo;
@@ -51,8 +52,12 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, index }) => {
       dispatch(
         editTodo({ id: task.id, NewText: newText, NewCategory: newCategory })
       );
+      toast.success('Task edited successfully!')
+    } else {
+      toast.error('Something went wrong')
     }
     setEditFormIsOpen(false);
+    
   };
 
   // Maximum number of characters
