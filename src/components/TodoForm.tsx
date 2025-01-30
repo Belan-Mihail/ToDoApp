@@ -13,6 +13,8 @@ const TodoForm: React.FC = () => {
   // Maximum number of characters
   const maxLength = 500;
 
+  const maxOneWordlLength = 40; 
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -56,8 +58,9 @@ const TodoForm: React.FC = () => {
           value={task}
           onChange={handleTaskChange}
           placeholder="Add new task..."
-          className="p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text resize-none focus:outline-none focus:border-0 hover:border-confirm-button transition-all"
+          className="p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text resize-none focus:outline-none focus:border-0 hover:border-confirm-button transition-all break-words overflow-hidden overflow-ellipsis"
           rows={4}
+          
         />
         
         
