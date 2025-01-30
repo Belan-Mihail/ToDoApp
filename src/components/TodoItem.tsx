@@ -41,6 +41,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, index }) => {
   const handleDelete = () => {
     const deleteAction = () => {
       dispatch(removeTodo(task.id));
+      toast.success('Task deleted successfully!')
     };
 
     showModal("Are you sure you want to delete this task?", deleteAction);
@@ -67,7 +68,9 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, index }) => {
     const newTask: string = e.target.value;
     if (newTask.length <= maxLength) {
       setNewText(newTask);
-    }
+    } else {
+          toast.warning('you have reached the maximum number of characters')
+        }
   };
 
   const handleCancel = () => {
@@ -167,7 +170,7 @@ const TodoItem: React.FC<TodoItemProps> = ({ task, index }) => {
               </div>
               {newText.length >= maxLength ? (
                 <div className="text-sm italic text-delete-button mt-1 text-center">
-                   the maximum has been reached
+                   too long text
                 </div>
               ) : (
                 <div className="text-sm italic text-primary-light mt-1 text-right">
