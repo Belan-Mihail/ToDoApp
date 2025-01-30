@@ -103,7 +103,11 @@ const TodoForm: React.FC = () => {
           <button
                 type="button"
                 onClick={() => {}}
-                className={`custom-width custom-padding border-primary-light border-2 rounded-2xl bg-edit-button hover:bg-edit-button-hover`}
+                className={`custom-width custom-padding border-primary-light border-2 rounded-2xl bg-edit-button hover:bg-edit-button-hover ${
+                  task.length < 1
+                    ? "opacity-45 cursor-not-allowed"
+                    : ""
+                }`}
               >
                 Clear form
               </button>
