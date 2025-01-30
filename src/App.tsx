@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {RootState} from './redux/store'
 import  setFilter  from './redux/todoSlice';
 import './App.css'
-import { ToastContainer } from 'react-toastify'; 
+import { ToastContainer, toast } from 'react-toastify'; 
 import 'react-toastify/dist/ReactToastify.css'; 
 
 const App: React.FC = () => {

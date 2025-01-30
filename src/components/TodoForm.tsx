@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { addTodo } from "../redux/todoSlice";
 import { useDispatch } from "react-redux";
+import { toast } from 'react-toastify'
 
 const TodoForm: React.FC = () => {
   const [task, setTask] = useState<string>("");
@@ -19,9 +20,12 @@ const TodoForm: React.FC = () => {
       if (task.trim()) {
         dispatch(addTodo({ text: task, category }));
         setTask("");
+        toast.success('Task added successfully!')
+        
       }
     } catch (error) {
       console.log(error);
+      toast.error('Something went wrong')
     }
   };
 
