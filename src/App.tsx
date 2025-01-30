@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {RootState} from './redux/store'
 import  setFilter  from './redux/todoSlice';
 import './App.css'
+import { ToastContainer } from 'react-toastify'; 
+import 'react-toastify/dist/ReactToastify.css'; 
 
 const App: React.FC = () => {
   
@@ -27,6 +29,17 @@ const App: React.FC = () => {
 
         {/* Task List */}
         <TodoList todos={todos} filter={filter} />
+        <ToastContainer 
+              position="top-left" 
+              autoClose={2000} 
+              hideProgressBar={false} 
+              newestOnTop={true} 
+              closeOnClick={true} 
+              rtl={false} 
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+             />
       </div>
 
   )
