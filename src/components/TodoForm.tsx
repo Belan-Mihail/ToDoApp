@@ -38,6 +38,10 @@ const TodoForm: React.FC = () => {
     }
   };
 
+  const handleClearForm = () => {
+    setTask('')
+  }
+
   return (
     <>
       <div className="flex items-center justify-center text-center mt-2">
@@ -102,7 +106,7 @@ const TodoForm: React.FC = () => {
           </button>
           <button
                 type="button"
-                onClick={() => {}}
+                onClick={handleClearForm}
                 className={`custom-width custom-padding border-primary-light border-2 rounded-2xl bg-edit-button hover:bg-edit-button-hover ${
                   task.length < 1
                     ? "opacity-45 cursor-not-allowed"
