@@ -10,6 +10,10 @@ interface TodoListProps {
 
 const TodoList:React.FC<TodoListProps> = ({todos, filter}) => {
   const filteredTask = filteredTodos(todos, filter)
+
+  const sortedTask = filteredTask.sort((a, b) => a.id > b.id ? 1 : -1)
+
+  
   return (
     <>
     <div className='flex items-center justify-center text-center mt-2'>
