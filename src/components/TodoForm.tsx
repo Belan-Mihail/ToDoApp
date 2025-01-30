@@ -55,15 +55,7 @@ const TodoForm: React.FC = () => {
           className="p-2 border-primary-light border-2 bg-lemon rounded-xl text-dark-text resize-none focus:outline-none focus:border-0 hover:border-confirm-button transition-all"
           rows={4}
         />
-        {task.length >= maxLength ? (
-          <div className="text-sm italic text-delete-button mt-1 text-center">
-          you have reached the maximum number of characters
-        </div>
-        ) : (
-          <div className="text-sm italic text-primary-light mt-1 text-right">
-          {task.length} / {maxLength} characters
-        </div>
-        )}
+        
         
         <div className="flex justify-around mt-2 mx-4 gap-4">
           <div className="flex  justify-around gap-4 items-center">
@@ -85,8 +77,20 @@ const TodoForm: React.FC = () => {
               </option>
             </select>
           </div>
+          {task.length >= maxLength ? (
+          <div className="text-sm italic text-delete-button mt-1 text-center">
+          you have reached the maximum number of characters
+        </div>
+        ) : (
+          <div className="text-sm italic text-primary-light mt-1 text-right">
+          {task.length} / {maxLength} characters
+        </div>
+        )}
 
-          <button
+          
+        </div>
+        <div className="flex justify-around mt-2 mx-4 gap-4">
+        <button
             type="submit"
             className={`custom-width border-primary-light border-2 rounded-2xl bg-confirm-button hover:bg-confirm-button-hover ${
               task.length < 1
@@ -96,6 +100,13 @@ const TodoForm: React.FC = () => {
           >
             Add Task
           </button>
+          <button
+                type="button"
+                onClick={() => {}}
+                className={`custom-width custom-padding border-primary-light border-2 rounded-2xl bg-edit-button hover:bg-edit-button-hover`}
+              >
+                Clear form
+              </button>
         </div>
       </form>
     </>
